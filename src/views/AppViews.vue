@@ -12,7 +12,7 @@
       <ContactSection />
     </main>
     <AppFooter />
-    <LoadingSpinner v-if="loading" />
+    <LoadingSpinner :visible="loading" />
   </div>
 </template>
 

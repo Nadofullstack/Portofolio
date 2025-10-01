@@ -1,17 +1,9 @@
 <script setup>
-
-import AppViews from './views/AppViews.vue';
-
+import AppViews from './views/AppViews.vue'
 </script>
 
-
 <template>
-
-<AppViews />
+  <AppViews />
 </template>
 
-
-<style scoped>
-
-
-</style>
+<style scoped></style>

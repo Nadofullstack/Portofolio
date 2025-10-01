@@ -6,7 +6,7 @@ defineOptions({ name: 'AppHeader' })
   >
     <div class="container mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
-        <div class="text-2xl font-bold text-indigo-600">Portfolio</div>
+        <div class="text-2xl font-bold text-indigo-600 cursor-pointer">Portfolio</div>
 
         <nav class="hidden md:flex space-x-10">
           <button

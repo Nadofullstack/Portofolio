@@ -4,7 +4,7 @@
       <div class="mb-6 md:mb-0 text-center md:text-left">
         <h3 class="text-lg font-bold text-indigo-400 mb-2">Nadège Djossou</h3>
         <p class="text-sm">
-          Étudiante en laboratoire, passionnée par la recherche scientifique et l’innovation.
+          Étudiant en laboratoire, passionnée par la recherche scientifique et l’innovation.
         </p>
         <p class="text-xs mt-2">© 2025 Nadège Djossou. Tous droits réservés.</p>
       </div>

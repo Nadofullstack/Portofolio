@@ -55,7 +55,8 @@
 // Pas de logique JS ici, juste le template
 </script>
 
-<style scoped>.section-animate {
+<style scoped>
+.section-animate {
   animation: fadeInUp 0.8s;
 }
 @keyframes fadeInUp {

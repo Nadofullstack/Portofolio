@@ -1,4 +1,4 @@
-defineOptions({ name: 'SkillsSection' })
+
 <template>
   <section id="skills" class="py-20 bg-gray-50">
     <div class="container mx-auto px-6">

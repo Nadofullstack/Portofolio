@@ -38,18 +38,18 @@
           <div class="grid grid-cols-2 gap-6 mb-8">
             <div>
               <p class="text-gray-700 font-medium">
-                <span class="text-indigo-600 mr-2">■</span> Nom: Alexandre Martin
+                <span class="text-indigo-600 mr-2">■</span> Nom: Nadège Djossou
               </p>
               <p class="text-gray-700 font-medium">
-                <span class="text-indigo-600 mr-2">■</span> Email: alexandre@example.com
+                <span class="text-indigo-600 mr-2">■</span> Email: nadege.djossou@example.com
               </p>
             </div>
             <div>
               <p class="text-gray-700 font-medium">
-                <span class="text-indigo-600 mr-2">■</span> Téléphone: +33 6 12 34 56 78
+                <span class="text-indigo-600 mr-2">■</span> Téléphone: +229 01 52 09 92 75
               </p>
               <p class="text-gray-700 font-medium">
-                <span class="text-indigo-600 mr-2">■</span> Localisation: Paris, France
+                <span class="text-indigo-600 mr-2">■</span> Localisation: Abomey-Calavi, Bénin
               </p>
             </div>
           </div>
@@ -77,7 +77,8 @@
 <script setup>
 defineOptions({ name: 'AboutSection' })
 </script>
-<style scoped>.section-animate {
+<style scoped>
+.section-animate {
   animation: fadeInUp 0.8s;
 }
 @keyframes fadeInUp {

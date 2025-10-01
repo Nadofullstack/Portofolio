@@ -76,7 +76,7 @@
               class="w-full px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors duration-300 flex items-center justify-center"
               :class="{ 'opacity-75 cursor-not-allowed': loading }"
             >
-              <span v-if="!loading">Envoyer le message</span>
+              <span class="cursor-pointer" v-if="!loading">Envoyer le message</span>
               <span v-else class="flex items-center">
                 <svg
                   class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
@@ -137,7 +137,13 @@
                 </div>
                 <div>
                   <h4 class="font-medium text-gray-300">Téléphone</h4>
-                  <p class="text-gray-400">+33 6 12 34 56 78</p>
+                  <a
+                    href="https://wa.me/+2290152099275"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-400 hover:text-indigo-400 transition-colors"
+                    >+229 01 52 09 92 75</a
+                  >
                 </div>
               </div>
 
@@ -154,7 +160,7 @@
                 </div>
                 <div>
                   <h4 class="font-medium text-gray-300">Email</h4>
-                  <p class="text-gray-400">alexandre@example.com</p>
+                  <p class="text-gray-400">nadege.djossou@example.com</p>
                 </div>
               </div>
 
@@ -177,7 +183,7 @@
                 </div>
                 <div>
                   <h4 class="font-medium text-gray-300">Adresse</h4>
-                  <p class="text-gray-400">123 Avenue de la République, 75011 Paris, France</p>
+                  <p class="text-gray-400">Abomey-Calavi, Bénin</p>
                 </div>
               </div>
             </div>
@@ -185,6 +191,19 @@
             <div class="mt-8 pt-6 border-t border-gray-700">
               <h4 class="font-medium text-gray-300 mb-4">Suivez-moi</h4>
               <div class="flex space-x-4">
+                <a
+                  href="https://wa.me/+2290152099275"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-400 hover:text-white transition-colors duration-300"
+                  aria-label="WhatsApp"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.433-9.894-9.896-9.894-5.459 0-9.885 4.434-9.889 9.894-.001 2.225.651 4.315 1.847 6.062l-1.011 3.697 3.803-1.002z"
+                    />
+                  </svg>
+                </a>
                 <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
                   <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path
@@ -217,12 +236,14 @@
 
 <script setup>
 import { ref } from 'vue'
+import emailjs from 'emailjs-com'
 
 const form = ref({
   name: '',
   email: '',
   subject: '',
   message: '',
+  reply_to: '',
 })
 const loading = ref(false)
 const successMessage = ref('')
@@ -232,9 +253,27 @@ async function submitForm() {
   loading.value = true
   successMessage.value = ''
   errorMessage.value = ''
+  form.value.reply_to = form.value.email
+
+  // ... dans la fonction submitForm()
+
+  // try {
+  //   await emailjs.send(
+  //     'VOTRE_SERVICE_ID',   // <-- Collez votre Service ID ici
+  //     'VOTRE_TEMPLATE_ID',  // <-- Collez votre Template ID ici
+  //     form.value,
+  //     'VOTRE_PUBLIC_KEY'    // <-- Collez votre Public Key ici
+  //   )
+  //   // ...
+  // }
+
   try {
-    // Simulation d'envoi de formulaire
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    await emailjs.send(
+      'service_loekyk6', // À remplacer par votre Service ID
+      'template_q8pfcjg', // À remplacer par votre Template ID
+      form.value,
+      'w3p5nHtZm35a_lB4U', // À remplacer par votre Public Key
+    )
     successMessage.value =
       'Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.'
     form.value = { name: '', email: '', subject: '', message: '' }
@@ -246,7 +285,7 @@ async function submitForm() {
 }
 </script>
 <style scoped>
-/* Styles spécifiques au formulaire de contact */   
+/* Styles spécifiques au formulaire de contact */
 .section-animate {
   animation: fadeInUp 0.8s;
 }
